@@ -1,0 +1,45 @@
+.image{
+    height: 50px
+}
+.image1{
+    height: 15px;
+    position: relative;
+}
+
+body{
+    /* background-color: aqua !important; */
+    /* display: flex; */
+    position: relative;
+}
+
+.main__container{
+
+    background-color: black;
+    color: white; 
+    /* position: relative; */
+    margin-bottom: 0; 
+}
+
+.btn__social__media{
+    border-radius: 50%;
+    text-align: center ;
+    width: 40px;
+    height: 40px;
+}
+
+.btn__displacement:hover, .btn__social__media:hover{
+    background-color: rgba(207, 151, 46, 0.944);
+}
+
+@media all and (max-width: 700px){
+    .btn__social__media__container{
+        display: flex;
+        flex-direction: row;
+        margin-left: 110px;
+    }
+}
+
+
+
+
+
