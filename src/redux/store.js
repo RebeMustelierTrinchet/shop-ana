@@ -4,6 +4,10 @@ import storage from 'redux-persist/lib/storage'; // usa localStorage
 // import storageSession from 'redux-persist/lib/storage/session' // usa sessionStorage
 import { combineReducers } from 'redux';
 import cartReducer from './cartSlice'; // ajusta el path según la ubicación de tu archivo cartSlice
+import favoritesReducer from './favSlice';
+
+import productsReducer from './productSlice';
+
 
 const persistConfig = {
   key: 'root',
@@ -12,6 +16,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   cart: cartReducer,
+  favorites: favoritesReducer, // Agregado aquí
+  products: productsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

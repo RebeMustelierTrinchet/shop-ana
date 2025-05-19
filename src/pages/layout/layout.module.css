@@ -1,5 +1,6 @@
 :root {
-    --background-color:rgba(206, 206, 206, 0.823)
+    --background-color:rgba(206, 206, 206, 0.823);
+    --icon-color:#03564A;
     
 }
 .imagen{
@@ -58,7 +59,7 @@ a:hover{
     /* height: 100% !important; */
 }
 .main__container{
-    background-color: rgba(146, 143, 143, 0.823);
+    background-color: #f8f8f8;
     height: 100% !important;
     display: flex;
     flex-direction: column;
@@ -78,13 +79,3 @@ a:hover{
     
 }
 
-.footer{
-    /* margin-bottom: 0; */
-    /* height: 100%; */
-    /* position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%; */
-
-}

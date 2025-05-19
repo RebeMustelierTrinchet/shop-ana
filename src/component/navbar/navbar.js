@@ -1,36 +1,50 @@
- import React from "react";
- import Container from 'react-bootstrap/Container';
- import Nav from 'react-bootstrap/Nav';
- import Navbar from 'react-bootstrap/Navbar';
-import styles from "./navbar.module.css";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
-import { CgMail } from "react-icons/cg";
+import React, { useState } from "react";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
- export default function NavBar(){
-    return(
-        <div>
-             <Navbar variant="dark" collapseOnSelect expand="lg"  className={styles.main__container}>
-      <Container>
-        <Navbar.Brand href="/" >
-                <div>
-                  logo
-                    {/* <img className={styles.image} src={Capture1}></img> */}
-                </div>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+import { FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { CgMail } from "react-icons/cg";
+import { IoMenu } from "react-icons/io5";
+
+import styles from "./navbar.module.css";
+import Capture1 from "./../../images/Untitled design (3).png";
+
+export default function NavBar() {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <div>
+      <Navbar variant="dark" expand="lg" className={styles.main__container}>
+        <img className={styles.image} src={Capture1} alt="logo" />
+        <Button variant="light" onClick={handleShow}  className={styles.menu_btn} >
+          <IoMenu className={styles.menu_icon} />
+        </Button>
+      </Navbar>
+
+      <Offcanvas show={show} onHide={handleClose} placement="end">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Menú</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <Nav className={styles.menu_links}>
+            <Nav.Link className={styles.btn__displacement} href="/">Inicio</Nav.Link>
             <Nav.Link className={styles.btn__displacement} href="/mi-carrito">Mi carrito</Nav.Link>
-            {/* <Nav.Link className={styles.btn__displacement} href="/bookOnline">Book Online</Nav.Link> */}
-    
+            <Nav.Link className={styles.btn__displacement} href="/sobre-nosotros">Sobre nosotros</Nav.Link>
+            <Nav.Link className={styles.btn__displacement} href="/contacto">Contacto</Nav.Link>
           </Nav>
-          <Nav className={styles.btn__social__media__container}>
-            <Nav.Link className={styles.btn__social__media} href="/"><FaFacebookF className={styles.icon}/></Nav.Link>
-            <Nav.Link className={styles.btn__social__media} href="/"><FaInstagram className={styles.icon}/></Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-        </div>
-    );
- }
+
+          <div className={styles.btn__social__media__container}>
+            <a className={styles.btn__social__media} href="https://facebook.com" target="_blank"><FaFacebookF className={styles.icon} /></a>
+            <a className={styles.btn__social__media} href="https://instagram.com" target="_blank"><FaInstagram className={styles.icon} /></a>
+            <a className={styles.btn__social__media} href="https://wa.me/5355555555" target="_blank"><FaWhatsapp className={styles.icon} /></a>
+          </div>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </div>
+  );
+}

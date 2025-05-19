@@ -6,6 +6,7 @@ import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import styles from './my_cart.module.css';
 
+
 const ADMIN_NUMBER = "+5358978430"; // Reemplaza con el número del administrador
 
 const calculateTotal = (cart) => {
@@ -13,6 +14,7 @@ const calculateTotal = (cart) => {
 };
 
 export default function Cart() {
+  
   const dispatch = useDispatch();
   const miCarrito = useSelector(selectCartMemoized);
   const [customerNumber, setCustomerNumber] = useState("");
@@ -56,12 +58,12 @@ export default function Cart() {
     const mensaje = `📦 *Nuevo Pedido*\n👤 Cliente: ${customerNumber}\n🛒 Productos: \n${miCarrito.map(item => `- ${item.name} x${item.num} ($${item.price * item.num})`).join("\n")}\n💰 Total: $${total}`;
     const urlWhatsApp = `https://wa.me/${ADMIN_NUMBER}?text=${encodeURIComponent(mensaje)}`;
     window.open(urlWhatsApp, "_blank");
-    // dispatch(clearCarrito());
+    dispatch(clearCarrito());
   };
 
   return (
     <div className={styles.cart}>
-      <h2>Carrito de Compras</h2>
+      <h2>Mis Compras</h2>
       <div className={styles.cartItems}>
         {miCarrito.map((item) => (
           <div key={item.id} className={styles.cartItem}>

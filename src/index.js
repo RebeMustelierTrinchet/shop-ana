@@ -8,9 +8,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/home/home';
 import { Provider } from 'react-redux';
 import { store,persistor  } from './redux/store';
-import Cart from './pages/my_cart/my_cart';
 
 import { PersistGate } from 'redux-persist/integration/react';
+import Product from './pages/product/product';
+import ProductDetail from './pages/productDetails/productDetails';
 const rootElement = document.getElementById("root");
 
 const root = ReactDOM.createRoot(rootElement);
@@ -22,7 +23,8 @@ root.render(
         <Layout>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/mi-carrito" element={<Cart />} />
+            <Route exact path="/mi-carrito" element={<Product />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
           </Routes>
         </Layout>
       </Router>
