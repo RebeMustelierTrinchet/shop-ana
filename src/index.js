@@ -12,6 +12,7 @@ import { store,persistor  } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import Product from './pages/product/product';
 import ProductDetail from './pages/productDetails/productDetails';
+import Contact from './pages/contact/contact';
 const rootElement = document.getElementById("root");
 
 const root = ReactDOM.createRoot(rootElement);
@@ -24,6 +25,7 @@ root.render(
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/mi-carrito" element={<Product />} />
+            <Route exact path="/contacto" element={<Contact />} />
             <Route path="/product/:id" element={<ProductDetail />} />
           </Routes>
         </Layout>

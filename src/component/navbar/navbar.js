@@ -34,7 +34,6 @@ export default function NavBar() {
           <Nav className={styles.menu_links}>
             <Nav.Link className={styles.btn__displacement} href="/">Inicio</Nav.Link>
             <Nav.Link className={styles.btn__displacement} href="/mi-carrito">Mi carrito</Nav.Link>
-            <Nav.Link className={styles.btn__displacement} href="/sobre-nosotros">Sobre nosotros</Nav.Link>
             <Nav.Link className={styles.btn__displacement} href="/contacto">Contacto</Nav.Link>
           </Nav>
 

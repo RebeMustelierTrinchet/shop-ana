@@ -9,7 +9,8 @@ import { selectFavoritesMemoized, selectProductsMemoized } from '../../redux/sel
 import { PiShoppingCartBold } from "react-icons/pi";
 
 import { useNavigate } from "react-router-dom";
-
+import { useState } from 'react';
+import { FaGift } from "react-icons/fa";
 
 export default function Card({ product }) {
 
@@ -26,8 +27,21 @@ export default function Card({ product }) {
 
   const isFavorite = favorites.some(item => item.id === product.id);
 
+
+  // anamation
+  const [isAnimating, setIsAnimating] = useState(false);
+
   const handleAddToCart = () => {
-    dispatch(addToCarrito(product));
+    // dispatch(addToCarrito(product));
+    setIsAnimating(true);
+
+      setTimeout(() => {
+      dispatch(addToCarrito(product));
+    }, 1000); // cuando el regalo "cae"
+
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1500); // reseteamos animación
   };
 
   const handleToggleFavorite = () => {
@@ -51,7 +65,7 @@ export default function Card({ product }) {
       {/* <p className={styles.card_description}>{product.description}</p> */}
       
 
-      <div className={styles.card__btn}>
+      {/* <div className={styles.card__btn}>
         <p className={styles.card_price}>${product.price}</p>
         <button className={styles.card_button} onClick={handleAddToCart}>
           <PiShoppingCartBold className={styles.icon} />
@@ -63,6 +77,36 @@ export default function Card({ product }) {
             <GoHeart className={styles.heart_icon} />
           )}
         </button>
+      </div> */}
+
+       <div className={styles.card__btn}>
+        <p className={`${styles.card_price} ${isAnimating ? styles.fadeOut : ''}`}>
+          ${product.price}
+        </p>
+
+        <button 
+          className={`${styles.card_button} ${isAnimating ? styles.keep : ''}`}
+          onClick={handleAddToCart}
+        >
+          <PiShoppingCartBold className={`${styles.icon} ${isAnimating ? styles.keep_icon: ''}`} />
+          {isAnimating && 
+          <FaGift className={styles.gift_animation} />
+        }
+        </button>
+
+         <button
+    className={`${styles.card_button} ${styles.favoriteButton} ${isAnimating ? styles.hidden : ''}`}
+    onClick={handleToggleFavorite}
+  >
+    {isFavorite ? (
+      <GoHeartFill className={styles.heart_icon_filled} />
+    ) : (
+      <GoHeart className={styles.heart_icon} />
+    )}
+  </button>
+        
+
+        
       </div>
     </div>
   );

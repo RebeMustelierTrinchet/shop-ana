@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { addToCarrito } from "../../redux/cartSlice";
 import { removeFromFavorites } from '../../redux/favSlice';
@@ -7,6 +7,21 @@ import styles from './favorites.module.css';
 
 import { FaCartShopping } from "react-icons/fa6";
 import { GoHeartFill } from "react-icons/go";
+import Card from '../card/card';
+
+
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import './favorites.module.css';
+
+// import required modules
+import { Pagination } from 'swiper/modules';
 
 export default function Fav() {
   const dispatch = useDispatch();
@@ -35,25 +50,42 @@ export default function Fav() {
 
   return (
     <div className={styles.cart}>
-      <h2>Mis Favoritos</h2>
+      <h2 className={styles.title}>Mis Favoritos</h2>
       <div className={styles.cartItems}>
-        {myFavorites.map((item) => (
-          <div key={item.id} className={styles.cartItem}>
-            <img src={item.image} alt={item.name} className={styles.cartItemImage} />
-            <div className={styles.cartItemInfo}>
-              <h3>{item.name}</h3>
-              <p>${item.price}</p>
-              <div className={styles.buttons}>
-                <button className={styles.cartButton} onClick={() => handleAddToCart(item)}>
-                  <FaCartShopping className={styles.icon} /> Añadir al carrito
-                </button>
-                <button className={styles.favButton} onClick={() => handleRemoveFavorite(item)}>
-                  <GoHeartFill className={styles.heartIcon} /> Quitar de favoritos
-                </button>
-              </div>
-            </div>
-          </div>
+        <Swiper
+        slidesPerView={1}
+        spaceBetween={20}
+          centerInsufficientSlides={true}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        }}
+        modules={[Pagination]}
+        className={styles.mySwiper}
+      >
+       
+          
+          {myFavorites.map((item) => (
+          <SwiperSlide className={styles.mySwiperSlice}>
+
+          <Card key={item.id} product={item} />
+           </SwiperSlide>
         ))}
+       
+      </Swiper>
       </div>
     </div>
   );
