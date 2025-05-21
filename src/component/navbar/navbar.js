@@ -33,6 +33,7 @@ export default function NavBar() {
         <Offcanvas.Body>
           <Nav className={styles.menu_links}>
             <Nav.Link className={styles.btn__displacement} href="/">Inicio</Nav.Link>
+            <Nav.Link className={styles.btn__displacement} href="/catalogo">Catalogo</Nav.Link>
             <Nav.Link className={styles.btn__displacement} href="/mi-carrito">Mi carrito</Nav.Link>
             <Nav.Link className={styles.btn__displacement} href="/contacto">Contacto</Nav.Link>
           </Nav>

@@ -28,6 +28,7 @@ export default function Footer() {
       <h3>Enlaces</h3>
       <ul>
         <li><a href="/">Inicio</a></li>
+        <li><a href="/catalogo">Catalogo</a></li>
         <li><a href="/productos">Productos</a></li>
         <li><a href="/contacto">Contacto</a></li>
       </ul>

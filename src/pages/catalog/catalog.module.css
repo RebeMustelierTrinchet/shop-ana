@@ -1,0 +1,50 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    min-height: 100vh;
+  }
+  
+  .homeTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .homeGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+
+  .filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+  align-items: center;
+}
+
+.searchInput,
+.selectInput {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid rgb(255, 177, 254);
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.noResults {
+  font-size: 1.2rem;
+  color: #888;
+  text-align: center;
+  margin-top: 2rem;
+}
