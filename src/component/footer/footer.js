@@ -36,18 +36,39 @@ export default function Footer() {
 
     <div className={styles.footer__contact}>
       <h3>Contáctanos</h3>
-      <p><FaPhone className={styles.icon} style={{ marginRight: '8px' }} /> +53 123 456 789</p>
-      <p><FaEnvelope className={styles.icon} style={{ marginRight: '8px' }} /> lovelyfantasy@flores.cu</p>
-      <div className={styles.footer__socials}>
-        <a href="https://wa.me/5355555555" target="_blank" rel="noreferrer">
-          <FaWhatsapp className={styles.icon}/>
-        </a>
-        <a href="#" aria-label="Facebook">
-          <FaFacebook className={styles.icon} />
-        </a>
-        <a href="#" aria-label="Instagram">
-          <FaInstagram className={styles.icon}/>
-        </a>
+     <p>
+  <FaPhone className={styles.icon} style={{ marginRight: '8px' }} /> 
+  +53 123 456 789
+</p>
+
+<p>
+  <FaEnvelope className={styles.icon} style={{ marginRight: '8px' }} /> 
+  lovelyfantasy@flores.cu
+</p>
+
+<div className={styles.footer__socials}>
+  <a 
+    href="https://wa.me/5355555555" 
+    target="_blank" 
+    rel="noreferrer" 
+    aria-label="Contactar por WhatsApp"
+  >
+    <FaWhatsapp className={styles.icon} />
+  </a>
+
+  <a 
+    href="#" 
+    aria-label="Visitar página de Facebook"
+  >
+    <FaFacebook className={styles.icon} />
+  </a>
+
+  <a 
+    href="#" 
+    aria-label="Visitar perfil de Instagram"
+  >
+    <FaInstagram className={styles.icon} />
+  </a>
       </div>
     </div>
   </div>

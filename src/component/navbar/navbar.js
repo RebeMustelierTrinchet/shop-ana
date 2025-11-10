@@ -21,7 +21,7 @@ export default function NavBar() {
     <div>
       <Navbar variant="dark" expand="lg" className={styles.main__container}>
         <img className={styles.image} src={Capture1} alt="logo" />
-        <Button variant="light" onClick={handleShow}  className={styles.menu_btn} >
+        <Button variant="light" onClick={handleShow}  aria-label="Abrir menú de navegación" className={styles.menu_btn} >
           <IoMenu className={styles.menu_icon} />
         </Button>
       </Navbar>

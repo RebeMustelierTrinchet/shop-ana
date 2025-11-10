@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div className={styles.homeContainer}>
-       <img src={I1} className={styles.img}/>
+       <img src={I1} alt="banner of fantasy lover" className={styles.img}/>
        <div className={styles.text_div}>
         <h1 className={styles.homeTitle}>Bienvenido a nuestra tienda de arreglos florales</h1>
         <p  className={styles.homeText}>No es solo un regalo.
