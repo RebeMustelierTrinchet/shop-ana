@@ -18,7 +18,7 @@ export default function Home() {
         <h1 className={styles.homeTitle}>Bienvenido a nuestra tienda de arreglos florales</h1>
         <p  className={styles.homeText}>No es solo un regalo.
             Es un “pensé en ti” envuelto en flores.
-            Hechos con calma, con alma, y con ganas de dejar huella.
+            Hechos con amor, con el alma, y con ganas de dejar huella.
             Porque a veces, lo que más se recuerda… florece<IoFlower  className={styles.icon}/>.</p>
         </div>
         <div  className={styles.icon_div}>
