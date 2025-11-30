@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client'; 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -19,8 +19,30 @@ import Login from './pages/login/login';
 import PrivateRoute from './component/privateRoute/privateRoute';
 import AddProduct from './pages/admin/add-product';
 import EditProduct from './pages/admin/edit';
-const rootElement = document.getElementById("root");
 
+// ✅ Preconnect a Firebase y Google APIs
+const PreconnectLinks = () => {
+  useEffect(() => {
+    const links = [
+      "https://ana-tienda.firebaseapp.com",
+      "https://apis.google.com",
+      "https://firebaseinstallations.googleapis.com",
+      "https://www.google-analytics.com"
+    ];
+
+    links.forEach(href => {
+      const link = document.createElement("link");
+      link.rel = "preconnect";
+      link.href = href;
+      if (href.includes("google")) link.crossOrigin = "anonymous";
+      document.head.appendChild(link);
+    });
+  }, []);
+
+  return null;
+};
+
+const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(

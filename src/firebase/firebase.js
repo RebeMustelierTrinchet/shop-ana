@@ -26,3 +26,12 @@ const analytics = getAnalytics(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 export const auth = getAuth(app);
+
+// Inicializar Analytics solo después de que la página cargue
+export const initializeAnalytics = () => {
+  if (typeof window !== "undefined") {
+    import("firebase/analytics").then(({ getAnalytics }) => {
+      getAnalytics(app);
+    });
+  }
+};

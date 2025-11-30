@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './contact.module.css';
-import I1 from "./../../images/photo_2025-02-28_16-03-02.jpg"
+import I1 from "./../../images/I1.webp"
 import { FaPhone, FaEnvelope, FaWhatsapp, FaFacebook, FaInstagram, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Contact() {
