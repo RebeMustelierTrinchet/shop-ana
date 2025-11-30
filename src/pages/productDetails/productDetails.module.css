@@ -1,29 +1,33 @@
-.title {
-  font-size: 40px;
-  font-weight: 700;
-  color: var(--icon-color);
-  margin-bottom: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  user-select: none;
-}
-
+/* Contenedor principal */
 .main_cont {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
   width: 95%;
-  margin: 0 auto;
-  overflow: hidden;
+  margin: 30px auto;
+  gap: 20px;
 }
 
+/* Título del producto */
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--icon-color);
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  text-align: center;
+}
+
+/* Contenedor de la imagen */
 .image_cont {
   width: 70%;
-  height: 20vw;
   min-height: 300px;
+  max-height: 500px;
   background-color: var(--icon-color);
+  border-radius: 20px;
   overflow: hidden;
-  padding: 30px 30px 30px 0;
-  border-radius: 0 50% 50% 0;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,64 +37,80 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0 50% 50% 0;
+  border-radius: 20px;
 }
 
+/* Contenedor de texto y detalles */
 .text_cont {
-  background-color: rgba(255, 177, 254, 0.684);
-  height: 25vh;
-  width: 50%;
-  margin-left: auto;
-  border-radius: 50% 0 0 50%;
-  padding-top: 100px;
-  padding-left: 25px;
+  background: rgba(255, 177, 254, 0.7);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  min-width: 250px;
+  gap: 15px;
+  text-align: center;
 }
 
 .text {
-  font-size: 25px;
+  font-size: 22px;
   color: var(--icon-color);
-  margin-bottom: 20px;
+  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   user-select: none;
+}
+
+/* Botón de compra */
+.buy_btn {
+  margin-top: 15px;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff63c3;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buy_btn:hover {
+  background-color: #e54ba7;
+  transform: scale(1.05);
+}
+
+/* Mensaje producto no encontrado */
+.notFound {
+  text-align: center;
+  font-size: 24px;
+  color: red;
+  margin-top: 50px;
 }
 
 /* Vista móvil */
 @media (max-width: 768px) {
   .title {
     font-size: 28px;
-    text-align: center;
   }
 
   .image_cont {
-    width: 100%;
+    width: 95%;
     height: 40vw;
     min-height: 200px;
-    border-radius: 0;
-    padding: 15px;
-  }
-
-  .image_cont img {
-    border-radius: 0;
   }
 
   .text_cont {
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-    margin: 20px 0 0 0;
-    padding: 30px 20px;
-    align-items: center;
+    width: 90%;
+    padding: 20px;
   }
 
   .text {
     font-size: 18px;
-    text-align: center;
   }
 
-  .main_cont {
+  .buy_btn {
     width: 100%;
+    font-size: 16px;
   }
 }

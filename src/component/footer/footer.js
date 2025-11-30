@@ -38,17 +38,14 @@ export default function Footer() {
       <h3>Contáctanos</h3>
      <p>
   <FaPhone className={styles.icon} style={{ marginRight: '8px' }} /> 
-  +53 123 456 789
+  +53 58-978-430
 </p>
 
-<p>
-  <FaEnvelope className={styles.icon} style={{ marginRight: '8px' }} /> 
-  lovelyfantasy@flores.cu
-</p>
+
 
 <div className={styles.footer__socials}>
   <a 
-    href="https://wa.me/5355555555" 
+    href="https://wa.me/58978430" 
     target="_blank" 
     rel="noreferrer" 
     aria-label="Contactar por WhatsApp"
@@ -57,14 +54,14 @@ export default function Footer() {
   </a>
 
   <a 
-    href="#" 
+    href="https://www.facebook.com/analucia.jimeneztrull" 
     aria-label="Visitar página de Facebook"
   >
     <FaFacebook className={styles.icon} />
   </a>
 
   <a 
-    href="#" 
+    href="https://www.instagram.com/ann_rebel625?igsh=MXJrcHVoeDlleXVqdw==" 
     aria-label="Visitar perfil de Instagram"
   >
     <FaInstagram className={styles.icon} />

@@ -14,6 +14,11 @@ import Product from './pages/product/product';
 import ProductDetail from './pages/productDetails/productDetails';
 import Contact from './pages/contact/contact';
 import Catalog from './pages/catalog/catalog';
+import Admin from './pages/admin/admin';
+import Login from './pages/login/login';
+import PrivateRoute from './component/privateRoute/privateRoute';
+import AddProduct from './pages/admin/add-product';
+import EditProduct from './pages/admin/edit';
 const rootElement = document.getElementById("root");
 
 const root = ReactDOM.createRoot(rootElement);
@@ -29,6 +34,26 @@ root.render(
             <Route exact path="/mi-carrito" element={<Product />} />
             <Route exact path="/contacto" element={<Contact />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            
+            <Route
+              path="/admin"
+              element={
+                <PrivateRoute>
+                  <Admin />
+                </PrivateRoute>
+              }
+            />
+            
+            <Route
+              path="/admin/add-product"
+              element={
+                <PrivateRoute>
+                  <AddProduct />
+                </PrivateRoute>
+              }
+            />
+
+            <Route path="/login" element={<Login />} />
           </Routes>
         </Layout>
       </Router>

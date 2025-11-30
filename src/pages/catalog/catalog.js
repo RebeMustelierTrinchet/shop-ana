@@ -1,19 +1,34 @@
 import React, { useEffect, useState } from "react";
-import productsData from "./../../var/var_elemnts";
+import { collection, getDocs } from "firebase/firestore";
 import styles from "./catalog.module.css";
 import Card from "../../component/card/card";
 
 import { useDispatch } from "react-redux";
+import { db } from "../../firebase/firebase";
 import { setProducts } from "../../redux/productSlice";
 
 export default function Catalog() {
   const dispatch = useDispatch();
-
+  const [productsData, setProductsData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("todos");
 
+  // Cargar productos desde Firestore
   useEffect(() => {
-    dispatch(setProducts(productsData));
+    const fetchProducts = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "products"));
+        const items = [];
+        querySnapshot.forEach((doc) => {
+          items.push({ id: doc.id, ...doc.data() });
+        });
+        setProductsData(items);
+        dispatch(setProducts(items));
+      } catch (err) {
+        console.error("Error cargando productos:", err);
+      }
+    };
+    fetchProducts();
   }, [dispatch]);
 
   const filteredProducts = productsData.filter((product) => {

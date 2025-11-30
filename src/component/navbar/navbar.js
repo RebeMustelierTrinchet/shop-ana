@@ -39,9 +39,9 @@ export default function NavBar() {
           </Nav>
 
           <div className={styles.btn__social__media__container}>
-            <a className={styles.btn__social__media} href="https://facebook.com" target="_blank"><FaFacebookF className={styles.icon} /></a>
-            <a className={styles.btn__social__media} href="https://instagram.com" target="_blank"><FaInstagram className={styles.icon} /></a>
-            <a className={styles.btn__social__media} href="https://wa.me/5355555555" target="_blank"><FaWhatsapp className={styles.icon} /></a>
+            <a className={styles.btn__social__media} href="https://www.facebook.com/analucia.jimeneztrull" target="_blank"><FaFacebookF className={styles.icon} /></a>
+            <a className={styles.btn__social__media} href="https://www.instagram.com/ann_rebel625?igsh=MXJrcHVoeDlleXVqdw==" target="_blank"><FaInstagram className={styles.icon} /></a>
+            <a className={styles.btn__social__media} href="https://wa.me/58978430" target="_blank"><FaWhatsapp className={styles.icon} /></a>
           </div>
         </Offcanvas.Body>
       </Offcanvas>
